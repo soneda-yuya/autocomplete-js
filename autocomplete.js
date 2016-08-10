@@ -1,6 +1,24 @@
-;(function(window, undefined) {
+(function(definition){// 定義する関数を引数にとる
+    // ロードされた文脈に応じてエクスポート方法を変える
+
+    // CommonJS
+    if (typeof exports === "object") {
+        module.exports = definition();
+
+    // RequireJS
+    } else if (typeof define === "function" && define.amd) {
+        define(definition);
+
+    // <script>
+    } else {
+        autoComplete = definition();
+    }
+
+})(function() {
     'use strict';
-    var autoComplete = {
+    var autoComplete = function autoComplete(){};
+
+    autoComplete.prototype = {
         exec : function(e) {
             var inputTarget = e.currentTarget
             var s = inputTarget.value
@@ -52,6 +70,8 @@
             }, 100)
         }
     }
-    module.exports = autoComplete
 
-})(typeof window != 'undefined' ? window : void 0);
+    console.log(autoComplete)
+    return autoComplete
+
+});

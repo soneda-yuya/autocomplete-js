@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./autocomplete.js"></script>
+        <script>
+            var complete = new autoComplete
+        </script>
+    </head>
+    <body>
+        <input type="text" name="country" autocomplete="off" placeholder="区を入力してください" onKeyUp="complete.exec(event)" onblur="complete.remove" datalist="country-list" value="">
+        <datalist id="country-list">
+            <option value="usa">
+            <option value="england">
+            <option value="japan">
+            <option value="germany">
+        </datalist>
+        <ul class="autocomplete" id="country-list-autocomplete">
+        </ul>
+    </body>
+</html>

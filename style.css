@@ -1,0 +1,11 @@
+.autocomplete{
+    padding:0px;
+    position:absolute;;
+    min-width:170px;
+    z-index:2;
+}
+
+.autocomplete > li{
+    padding:5 5 5 5;
+    background: #DDDDDD;
+}
